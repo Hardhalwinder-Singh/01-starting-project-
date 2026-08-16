@@ -1,9 +1,10 @@
 import { Injectable } from "@angular/core";
 import { NewTaskData } from "./task/task.model";
+import { take } from "rxjs";
 
 @Injectable({providedIn:'root'})
 export class TasksService{
-
+           
         private tasks = [
         {
             id: 't1',
@@ -37,13 +38,23 @@ export class TasksService{
         ];
 
 
-        constructor(){
-            const tasks = localStorage.getItem('tasks')
+        private newArray = this.tasks;
+        
+        
+      constructor() {
+        const storedTasks = localStorage.getItem('tasks');
+        const parsedTasks = storedTasks ? JSON.parse(storedTasks) : null;
+        
 
-            if(tasks){
-                this.tasks = JSON.parse(tasks);
-            }
+        this.tasks = (parsedTasks && (parsedTasks.length > 0)) ? parsedTasks : this.newArray;
+
+        // if (parsedTasks && parsedTasks.length > 0) {
+        //     this.tasks = parsedTasks;
+        // } else {
+        //     this.tasks = this.newArray;
+        // }
         }
+
 
         getUserTasks(userId : string)
         {

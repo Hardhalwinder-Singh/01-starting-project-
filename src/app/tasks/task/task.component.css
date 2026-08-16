@@ -2,7 +2,10 @@ article {
   padding: 1rem;
   color: #25113d;
   background-color: #8f73ac;
+  overflow: auto;
 }
+
+
 
 h2 {
   margin: 0;
@@ -34,4 +37,12 @@ time {
 .actions button:active {
   background-color: #4a0774;
   box-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
+}
+
+
+@media (max-height: 620px) {
+  .actions button {
+   font-size: 0.75rem;
+    padding: 0.35rem 1rem;
+}
 }

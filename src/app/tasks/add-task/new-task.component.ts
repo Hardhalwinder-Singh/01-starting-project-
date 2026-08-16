@@ -36,7 +36,9 @@ export class NewTaskComponent {
       summary: this.enteredSummary,
       date: this.enteredDate
     }, this.userId);
-    this.close.emit();
+    // this.close.emit();
+      this.onCancel();
   }
+
   
 }

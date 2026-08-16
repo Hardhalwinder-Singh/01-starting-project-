@@ -24,17 +24,12 @@ isAddingTask: boolean = false;
  }
 
 
-onCompleteTask(taskId: string) {
-  this.tasksService.removeTask(taskId);
-  
-}
-
 onStartAddTAsk(){
-   this.isAddingTask =true
+   this.isAddingTask =true;
 }
 
 onCloseAddTask(){
-  this.isAddingTask=false
+  this.isAddingTask=false;
 }
 
 
