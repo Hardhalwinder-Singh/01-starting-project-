@@ -1,0 +1,16 @@
+<app-card>
+<article id="singleTask">
+  
+    <h2>{{ task.title }}</h2>
+    <time >{{ task.dueDate | date:'EEEE, MMM d, y' }}</time>
+    <p>{{ task.summary }}</p>
+    <p class="actions">
+        <button (click)="onCompleteTask()">Complete</button>
+        
+    </p> 
+    
+</article>
+</app-card>
+    
+
+

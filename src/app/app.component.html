@@ -1,0 +1,29 @@
+<app-header></app-header>
+
+<main>
+  <ul id="users">
+
+    @for (user of users; track user.id) { 
+      <li>
+        <app-user [user]="user" [selected]= "user.id === selectUserId" (anyName)="onSelectUser($event)" />
+      </li>
+    }
+  
+  </ul>
+
+  <!-- <app-tasks [name]="selectedUser? selectedUser.name : undefined" /> -->
+  <!-- OR -->
+   @if (selectUserId) {
+    <app-tasks [userId]="selectedUser!.id" [name]="selectedUser!.name" />
+   }@else {
+    <p>Please select a user to see their tasks.</p>
+   }
+  
+</main>
+
+<!-- other way to write tags we can do self-closing tags
+ like <app-user /> or <app-header /> 
+ 
+ Also we can use *NgFor and NgIf directives to loop through the users and display them in the list
+ older way supported before angular 16 is to use *ngFor and *ngIf directives like this:
+ -->
