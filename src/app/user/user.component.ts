@@ -1,7 +1,7 @@
 import { Component, computed, signal, Input, input, Output, EventEmitter,  output } from '@angular/core';
 import { DUMMY_USERS } from '../dummy-users';
 import { type UserComponentInterface } from './user.model';
-import { CardComponent } from '../shared/card/card.component';
+
 //math floor rounds to nearest whole number and() Math.random() * DUMMY_USERS.length)makes random number between 0 and
 //  the length of the array. This is used to select a random user from the DUMMY_USERS array.
 const randomIndex = Math.floor(Math.random() * DUMMY_USERS.length);
@@ -11,8 +11,8 @@ const randomIndex = Math.floor(Math.random() * DUMMY_USERS.length);
 
 @Component({
   selector: 'app-user',
-  standalone: true,
-  imports: [CardComponent],
+  standalone: false,
+
   templateUrl: './user.component.html',
   styleUrl: './user.component.css'
 })
